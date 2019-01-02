@@ -1,6 +1,6 @@
 
-(ns app.upload
-  (:require ["child_process" :as cp] [app.config :as config])
+(ns calcit-theme.upload
+  (:require ["child_process" :as cp] [calcit-theme.config :as config])
   (:require-macros [clojure.core.strint :refer [<<]]))
 
 (defn sh! [command] (println command) (println (.toString (cp/execSync command))))

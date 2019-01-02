@@ -1,5 +1,5 @@
 
-(ns app.comp.container
+(ns calcit-theme.comp.container
   (:require [hsl.core :refer [hsl]]
             [respo-ui.core :as ui]
             [respo.core
@@ -8,7 +8,7 @@
             [respo.comp.space :refer [=<]]
             [reel.comp.reel :refer [comp-reel]]
             [respo-md.comp.md :refer [comp-md]]
-            [app.config :refer [dev?]]))
+            [calcit-theme.config :refer [dev?]]))
 
 (defcomp
  comp-container

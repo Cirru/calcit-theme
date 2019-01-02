@@ -1,5 +1,5 @@
 
-(ns app.config )
+(ns calcit-theme.config )
 
 (def cdn?
   (cond

@@ -1,14 +1,14 @@
 
-(ns app.main
+(ns calcit-theme.main
   (:require [respo.core :refer [render! clear-cache! realize-ssr!]]
-            [app.comp.container :refer [comp-container]]
-            [app.updater :refer [updater]]
-            [app.schema :as schema]
+            [calcit-theme.comp.container :refer [comp-container]]
+            [calcit-theme.updater :refer [updater]]
+            [calcit-theme.schema :as schema]
             [reel.util :refer [listen-devtools!]]
             [reel.core :refer [reel-updater refresh-reel]]
             [reel.schema :as reel-schema]
             [cljs.reader :refer [read-string]]
-            [app.config :as config]
+            [calcit-theme.config :as config]
             [cumulo-util.core :refer [repeat!]]))
 
 (defonce *reel

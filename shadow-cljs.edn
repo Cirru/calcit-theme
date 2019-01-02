@@ -19,8 +19,8 @@
  :builds {:client {:target :browser
                    :output-dir "target/"
                    :asset-path "./"
-                   :modules {:client {:init-fn app.main/main!}}
-                   :devtools {:after-load app.main/reload!
+                   :modules {:client {:init-fn calcit-theme.main/main!}}
+                   :devtools {:after-load calcit-theme.main/reload!
                               :http-root "target"
                               :http-port 7000}
                    :compiler-options {:infer-externs :auto}
@@ -29,9 +29,9 @@
                              :build-options {:manifest-name "assets.edn"}}}
           :page {:target :node-script
                  :output-to "target/page.js"
-                 :main app.page/main!
-                 :devtools {:after-load app.page/main!}}
+                 :main calcit-theme.page/main!
+                 :devtools {:after-load calcit-theme.page/main!}}
           :upload {:target :node-script
                    :output-to "target/upload.js"
-                   :main app.upload/main!
-                   :devtools {:after-load app.upload/main!}}}}
+                   :main calcit-theme.upload/main!
+                   :devtools {:after-load calcit-theme.upload/main!}}}}
