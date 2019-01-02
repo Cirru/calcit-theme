@@ -8,26 +8,18 @@
             [respo.comp.space :refer [=<]]
             [reel.comp.reel :refer [comp-reel]]
             [respo-md.comp.md :refer [comp-md]]
-            [calcit-theme.config :refer [dev?]]))
+            [calcit-theme.config :refer [dev?]]
+            [cljs.reader :refer [read-string]]
+            [calcit-theme.comp.expr :refer [comp-expr]]))
 
 (defcomp
  comp-container
  (reel)
- (let [store (:store reel), states (:states store)]
+ (let [store (:store reel)
+       states (:states store)
+       data (read-string
+             "[\"defcomp\" \"comp-container\" [\"reel\"] [\"let\" [[\"store\" [\":store\" \"reel\"]] [\"states\" [\":states\" \"store\"]]] [\"div\" [\"{}\" [\":style\" [\"merge\" \"ui/global\" \"ui/row\"]]] [\"when\" \"dev?\" [\"cursor->\" \":reel\" \"comp-reel\" \"states\" \"reel\" [\"{}\"]]]]]]")]
    (div
-    {:style (merge ui/global ui/row)}
-    (textarea
-     {:value (:content store),
-      :placeholder "Content",
-      :style (merge ui/flex ui/textarea {:height 320}),
-      :on-input (action-> :content (:value %e))})
-    (=< "8px" nil)
-    (div
-     {:style ui/flex}
-     (comp-md "This is some content with `code`")
-     (=< "8px" nil)
-     (button
-      {:style ui/button,
-       :inner-text (str "run"),
-       :on-click (fn [e d! m!] (println (:content store)))}))
+    {:style (merge ui/global ui/fullscreen ui/row)}
+    (comp-expr data)
     (when dev? (cursor-> :reel comp-reel states reel {})))))
