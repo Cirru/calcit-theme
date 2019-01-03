@@ -20,6 +20,6 @@
        data (read-string
              "[\"defcomp\" \"comp-container\" [\"reel\"] [\"let\" [[\"store\" [\":store\" \"reel\"]] [\"states\" [\":states\" \"store\"]]] [\"div\" [\"{}\" [\":style\" [\"merge\" \"ui/global\" \"ui/row\"]]] [\"when\" \"dev?\" [\"cursor->\" \":reel\" \"comp-reel\" \"states\" \"reel\" [\"{}\"]]]]]]")]
    (div
-    {:style (merge ui/global ui/fullscreen ui/row)}
-    (comp-expr data)
+    {:style (merge ui/global ui/fullscreen ui/row {:background-color :black})}
+    (comp-expr data false)
     (when dev? (cursor-> :reel comp-reel states reel {})))))

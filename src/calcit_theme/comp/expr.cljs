@@ -8,13 +8,20 @@
             [respo.comp.space :refer [=<]]
             [reel.comp.reel :refer [comp-reel]]
             [respo-md.comp.md :refer [comp-md]]
-            [calcit-theme.config :refer [dev?]]))
+            [calcit-theme.config :refer [dev?]]
+            [calcit-theme.theme :as theme]))
 
 (defcomp
  comp-expr
- (expr)
+ (expr tailing?)
  (list->
-  {:style {:display :inline-block, :border-left "1px solid #ccc", :color :white}}
+  {:style (merge theme/style-expr (theme/decorate-expr expr tailing?))}
   (->> expr
        (map-indexed
-        (fn [idx child] [idx (if (string? child) (div {} (<> child)) (comp-expr child))])))))
+        (fn [idx child]
+          [idx
+           (if (string? child)
+             (div
+              {:style (merge theme/style-leaf (theme/decorate-leaf child (zero? idx)))}
+              (<> child))
+             (comp-expr child (= (inc idx) (count expr))))])))))
