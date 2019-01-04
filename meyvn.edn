@@ -1,8 +1,8 @@
 
-{:pom {:group-id "mvc-works",
-       :artifact-id "calcit-workflow",
+{:pom {:group-id "cirru",
+       :artifact-id "calcit-theme",
        :version "0.1.0",
-       :name "Workflow"}
+       :name "Color schemes library for calcit editor."}
  :packaging {:jar {:enabled true
                    :remote-repository {:id "clojars"
                                        :url "https://clojars.org/repo"}}}
