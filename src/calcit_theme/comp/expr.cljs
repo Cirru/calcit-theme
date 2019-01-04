@@ -13,9 +13,9 @@
 
 (defcomp
  comp-expr
- (expr tailing?)
+ (expr tailing? root?)
  (list->
-  {:style (merge theme/style-expr (theme/decorate-expr expr tailing?))}
+  {:style (merge theme/style-expr (theme/decorate-expr expr tailing? root?))}
   (->> expr
        (map-indexed
         (fn [idx child]
@@ -24,4 +24,4 @@
              (div
               {:style (merge theme/style-leaf (theme/decorate-leaf child (zero? idx)))}
               (<> child))
-             (comp-expr child (= (inc idx) (count expr))))])))))
+             (comp-expr child (= (inc idx) (count expr)) false))])))))

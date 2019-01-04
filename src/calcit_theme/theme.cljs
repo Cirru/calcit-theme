@@ -5,18 +5,24 @@
 
 (defn expr-simple? [expr] (and (every? string? expr) (< (count expr) 6)))
 
-(defn decorate-expr [expr tailing?]
+(defn decorate-expr [expr tailing? root?]
   (cond
+    root? {:display :inline-block}
     tailing? {:display :inline-block}
     (expr-simple? expr)
-      {:display :inline-block, :border-left "none", :border-bottom "1px solid white"}
+      {:display :inline-block,
+       :border-left "none",
+       :border-bottom (<< "1px solid ~(hsl 0 0 100 0.3)"),
+       :padding "2px 4px"}
     :else {}))
 
 (defn decorate-leaf [text leading?]
   (cond
     (string/starts-with? text ":") {:color (hsl 240 30 64)}
     (or (string/starts-with? text "\"") (string/starts-with? text "|"))
-      {:color (hsl 120 60 56)}
+      (if (string/includes? text " ")
+        {:color (hsl 120 60 56), :background-color (hsl 0 0 100 0.12)}
+        {:color (hsl 120 60 56)})
     (string/starts-with? text "#\"") {:color (hsl 300 60 56)}
     (or (= text "true") (= text "false")) {:color (hsl 250 50 60)}
     (re-matches (re-pattern "^-?\\d") text) {:color (hsl 0 70 40)}
@@ -25,8 +31,7 @@
 
 (def style-expr
   {:display :block,
-   :border-left (<< "1px solid ~(hsl 0 0 100 0.5)"),
-   :box-shadow (<< "0 0 1px ~(hsl 0 0 100 0)"),
+   :border-left (<< "1px solid ~(hsl 0 0 100 0.3)"),
    :color :white,
    :vertical-align :top,
    :padding "4px 4px 0px 8px",
@@ -36,5 +41,6 @@
   {:display :inline-block,
    :text-align :top,
    :font-family ui/font-code,
-   :margin "0 8px",
+   :margin "0 4px",
+   :padding "0 4px",
    :color (hsl 200 14 60)})

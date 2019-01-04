@@ -18,8 +18,8 @@
  (let [store (:store reel)
        states (:states store)
        data (read-string
-             "[\"defcomp\" \"comp-container\" [\"reel\"] [\"let\" [[\"store\" [\":store\" \"reel\"]] [\"states\" [\":states\" \"store\"]]] [\"div\" [\"{}\" [\":style\" [\"merge\" \"ui/global\" \"ui/row\"]]] [\"when\" \"dev?\" [\"cursor->\" \":reel\" \"comp-reel\" \"states\" \"reel\" [\"{}\"]]]]]]")]
+             "[\"defn\" \"decorate-expr\" [\"expr\" \"tailing?\" \"root?\"] [\"cond\" [\"root?\" [\"{}\" [\":display\" \":inline-block\"]]] [\"tailing?\" [\"{}\" [\":display\" \":inline-block\"]]] [[\"expr-simple?\" \"expr\"] [\"{}\" [\":display\" \":inline-block\"] [\":border-left\" \"\\\"none\"] [\":border-bottom\" \"\\\"1px solid white\"]]] [\":else\" [\"{}\"]]]]")]
    (div
-    {:style (merge ui/global ui/fullscreen ui/row {:background-color :black})}
-    (comp-expr data false)
+    {:style (merge ui/global ui/fullscreen {:background-color :black})}
+    (comp-expr data false true)
     (when dev? (cursor-> :reel comp-reel states reel {})))))
