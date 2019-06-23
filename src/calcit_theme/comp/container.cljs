@@ -18,7 +18,7 @@
  (let [store (:store reel)
        states (:states store)
        data (read-string
-             "[\"defn\" \"decorate-expr\" [\"expr\" \"tailing?\" \"root?\"] [\"cond\" [\"root?\" [\"{}\" [\":display\" \":inline-block\"]]] [\"tailing?\" [\"{}\" [\":display\" \":inline-block\"]]] [[\"expr-simple?\" \"expr\"] [\"{}\" [\":display\" \":inline-block\"] [\":border-left\" \"\\\"none\"] [\":border-bottom\" \"\\\"1px solid white\"]]] [\":else\" [\"{}\"]]]]")]
+             "[\"defn\" \"decorate-expr\" [\"expr\" \"tailing?\" \"root?\"] [\"cond\" [\"root?\" [\"{}\" [\":display\" \":inline-block\"]]] [\"tailing?\" [\"{}\" [\":display\" \":inline-block\"]]] [[\"expr-simple?\" \"expr\"] [\"{}\" [\":display\" \":inline-block\"] [\":border-left\" \"\\\"none\"] [\":border-bottom\" \"\\\"1px solid white\"]]] [\":nothing\" \"nil\"] [\":else\" [\"{}\"]]]]")]
    (div
     {:style (merge ui/global ui/fullscreen {:background-color :black})}
     (render-expr data)
