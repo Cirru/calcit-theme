@@ -7,13 +7,14 @@
 
 (defn decorate-expr [expr tailing? root?]
   (cond
-    root? {:display :inline-block}
-    tailing? {:display :inline-block}
+    root? {:display :inline-block, :margin-bottom 0}
+    tailing? {:display :inline-block, :margin-bottom 0}
     (expr-simple? expr)
       {:display :inline-block,
        :border-left "none",
        :border-bottom (<< "1px solid ~(hsl 0 0 100 0.3)"),
-       :padding "2px 4px"}
+       :padding "2px 4px",
+       :margin-bottom 0}
     :else {}))
 
 (defn decorate-leaf [text leading?]
@@ -25,6 +26,7 @@
         {:color (hsl 120 60 56)})
     (string/starts-with? text "#\"") {:color (hsl 300 60 56)}
     (or (= text "true") (= text "false")) {:color (hsl 250 50 60)}
+    (= text "nil") (:color (hsl 310 60 40))
     (re-matches (re-pattern "^-?\\d") text) {:color (hsl 0 70 40)}
     leading? {:color (hsl 40 85 60)}
     :else {}))
@@ -35,7 +37,8 @@
    :color :white,
    :vertical-align :top,
    :padding "4px 4px 0px 8px",
-   :margin-left 8})
+   :margin-left 8,
+   :margin-bottom 4})
 
 (def style-leaf
   {:display :inline-block,
