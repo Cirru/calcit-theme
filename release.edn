@@ -1,0 +1,6 @@
+{:version "0.1.1-a1"
+ :group-id "cirru"
+ :artifact-id "calcit-theme"
+ :skip-tag true
+ :description "Color schemes library for calcit editor."
+ :scm-url "https://github.com/Cirru/calcit-theme"}

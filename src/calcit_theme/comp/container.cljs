@@ -2,9 +2,7 @@
 (ns calcit-theme.comp.container
   (:require [hsl.core :refer [hsl]]
             [respo-ui.core :as ui]
-            [respo.core
-             :refer
-             [defcomp cursor-> action-> mutation-> <> div button textarea span]]
+            [respo.core :refer [defcomp >> <> div button textarea span]]
             [respo.comp.space :refer [=<]]
             [reel.comp.reel :refer [comp-reel]]
             [respo-md.comp.md :refer [comp-md]]
@@ -22,4 +20,4 @@
    (div
     {:style (merge ui/global ui/fullscreen {:background-color :black})}
     (render-expr data)
-    (when dev? (cursor-> :reel comp-reel states reel {})))))
+    (when dev? (comp-reel (>> states :reel) reel {})))))
