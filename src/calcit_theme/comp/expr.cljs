@@ -2,9 +2,7 @@
 (ns calcit-theme.comp.expr
   (:require [hsl.core :refer [hsl]]
             [respo-ui.core :as ui]
-            [respo.core
-             :refer
-             [defcomp cursor-> action-> mutation-> list-> <> div button textarea span]]
+            [respo.core :refer [defcomp list-> <> div button textarea span]]
             [respo.comp.space :refer [=<]]
             [calcit-theme.config :refer [dev?]]
             [calcit-theme.theme :as theme]))
