@@ -1,6 +1,6 @@
 {
   "name": "calcit-theme",
-  "version": "0.1.1-a1",
+  "version": "0.1.1",
   "description": "ClojureScript workflow using Calcit Editor",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   "author": "jiyinyiyong",
   "license": "MIT",
   "devDependencies": {
-    "shadow-cljs": "^2.11.5"
+    "shadow-cljs": "^2.11.7"
   },
   "dependencies": {
     "feather-icons": "^4.28.0",
