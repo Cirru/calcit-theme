@@ -358,7 +358,7 @@
                           |j $ {} (:type :expr) (:by |rJG4IHzWf) (:at 1546450454709)
                             :data $ {}
                               |D $ {} (:type :leaf) (:by |rJG4IHzWf) (:at 1546450464516) (:text |read-string)
-                              |T $ {} (:type :leaf) (:by |rJG4IHzWf) (:at 1561259799894) (:text "|\"[\"defn\" \"decorate-expr\" [\"expr\" \"tailing?\" \"root?\"] [\"cond\" [\"root?\" [\"{}\" [\":display\" \":inline-block\"]]] [\"tailing?\" [\"{}\" [\":display\" \":inline-block\"]]] [[\"expr-simple?\" \"expr\"] [\"{}\" [\":display\" \":inline-block\"] [\":border-left\" \"\\\"none\"] [\":border-bottom\" \"\\\"1px solid white\"]]] [\":nothing\" \"nil\"] [\":else\" [\"{}\"]]]]")
+                              |T $ {} (:type :leaf) (:by |rJG4IHzWf) (:at 1612192011858) (:text "|\"[\"defn\" \"decorate-expr\" [\"expr\" \"tailing?\" \"root?\"] [\"cond\" [\"root?\" [\"{}\" [\":display\" \":inline-block\"]]] [\"tailing?\" [\"{}\" [\":display\" \":inline-block\"]]] [[\"expr-simple?\" \"expr\"] [\"{}\" [\":display\" \":inline-block\"] [\":border-left\" \"\\\"none\"] [\":border-bottom\" \"\\\"1px solid white\"]]] [\":nothing\" \"nil\"] [\":else\" [\"{}\"]]]]")
                   |T $ {} (:type :expr) (:at 1499755354983)
                     :data $ {}
                       |T $ {} (:type :leaf) (:by |root) (:at 1499755354983) (:text |div)

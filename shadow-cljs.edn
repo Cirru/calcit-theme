@@ -4,7 +4,7 @@
   :dependencies [
     [mvc-works/hsl "0.1.2"]
     [mvc-works/shell-page "0.1.15"]
-    [respo "0.13.4"]
+    [respo "0.13.8"]
     [respo/ui "0.3.16"]
     [respo/alerts "0.5.5"]
     [respo/value "0.3.0"]
